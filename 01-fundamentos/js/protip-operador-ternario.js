@@ -8,5 +8,3 @@ mensaje = (dia === 6 && mes === 10) ? 'Feliz cumpleaños!' : 'No es tu cumple.';
 console.log({mensaje});
 
 
-
-

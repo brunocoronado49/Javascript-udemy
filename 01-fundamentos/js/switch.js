@@ -10,11 +10,9 @@ switch (dia) {
     case 2:
         console.log('martes');
         break;
-
     default:
         console.log('no es domingo ni lunes ni martes');
         break;
 }
-
 
 
