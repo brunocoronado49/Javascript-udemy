@@ -23,8 +23,12 @@ console.log({sabine, shin});
 // arreglos
 const frutas = ['manzana', 'pera', 'sandia'];
 const otrasFrutas = [...frutas];
+// const otrasFrutas = frutas.slice(); <= forma alterna de romper la referencia
 otrasFrutas.push('mango');
 console.log({frutas, otrasFrutas});
+
+
+
 
 
 
