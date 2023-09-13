@@ -1,3 +1,4 @@
+// referencias al html
 const btnPedir = document.querySelector('#btnPedir');
 const btnNuevo = document.querySelector('#btnNuevo');
 const btnDetener = document.querySelector('#btnDetener');
@@ -49,17 +50,27 @@ const valorCarta = (carta) => {
 }
 valorCarta('4C');
 
-
 // eventos del html
 btnPedir.addEventListener('click', () => {
+    // sacando la carta y asignando su valor
     const carta = pedirCarta();
     puntosJugador += valorCarta(carta);
     puntosHTML[0].innerText = puntosJugador;
 
+    // creando la imagen y asignando sus estilos
     const imgCarta = document.createElement('img');
     imgCarta.src = `assets/cartas/${carta}.png`;
     imgCarta.classList.add('carta');
     divCartasJugador.append(imgCarta);
+
+    // evaluar los puntos del jugador
+    if (puntosJugador > 21) {
+        console.error('lo siento mucho, has perdido.');
+        btnPedir.disabled = true;
+    } else if (puntosJugador === 21) {
+        console.warn('GANASTE');
+        btnPedir.disabled = true;
+    }
 });
 
 
