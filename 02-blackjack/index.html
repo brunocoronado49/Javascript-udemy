@@ -12,38 +12,37 @@
         <h1 id="title">Blackjack</h1>
     </header>
 
-    <div class="row mt-2">
+    <div class="row mt-4">
         <div class="col text-center">
-            <button class="btn btn-primary">Nuevo Juego</button>
-            <button class="btn btn-primary">Pedir Carta</button>
-            <button class="btn btn-warning">Detener Juego</button>
+            <button class="btn btn-primary" id="btnNuevo">Nuevo Juego</button>
+            <button class="btn btn-primary" id="btnPedir">Pedir Carta</button>
+            <button class="btn btn-warning" id="btnDetener">Detener Juego</button>
         </div>
     </div>
 
-    <div class="row container">
+    <div class="row container mt-5">
         <div class="col">
-            <h3>Jugador: 0</h3>
+            <h3>Jugador:
+                <small>0</small>
+            </h3>
             <div id="jugador-cartas">
-                <!-- <img src="./assets/cartas/3D.png" class="carta">
-                <img src="./assets/cartas/3D.png" class="carta">
-                <img src="./assets/cartas/3D.png" class="carta">
-                <img src="./assets/cartas/3D.png" class="carta"> -->
+                <!-- <img src="./assets/cartas/3D.png" class="carta"> -->
             </div>
         </div>
     </div>
 
     <div class="row container mt-5 mb-5">
         <div class="col">
-            <h3>Computadora: 0</h3>
+            <h3>Computadora:
+                <small>0</small>
+            </h3>
             <div id="computadora-cartas">
-                <!-- <img src="./assets/cartas/3D.png" class="carta">
                 <img src="./assets/cartas/3D.png" class="carta">
-                <img src="./assets/cartas/3D.png" class="carta">
-                <img src="./assets/cartas/3D.png" class="carta"> -->
             </div>
         </div>
     </div>
 
+    <script src="https://underscorejs.org/underscore-umd-min.js"></script>
     <script src="./js/app.js"></script>
 </body>
 </html>
