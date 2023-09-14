@@ -14,9 +14,9 @@
 
     <div class="row mt-4">
         <div class="col text-center">
-            <button class="btn btn-primary" id="btnNuevo">Nuevo Juego</button>
-            <button class="btn btn-primary" id="btnPedir">Pedir Carta</button>
-            <button class="btn btn-warning" id="btnDetener">Detener Juego</button>
+            <button class="btn btn-warning" id="btnNuevo">Nuevo Juego</button>
+            <button class="btn btn-warning" id="btnPedir">Pedir Carta</button>
+            <button class="btn btn-danger" id="btnDetener">Detener Juego</button>
         </div>
     </div>
 
@@ -25,7 +25,7 @@
             <h3>Jugador:
                 <small>0</small>
             </h3>
-            <div id="jugador-cartas"></div>
+            <div id="divCartas"></div>
         </div>
     </div>
 
@@ -34,12 +34,18 @@
             <h3>Femputadora:
                 <small>0</small>
             </h3>
-            <div id="computadora-cartas"></div>
+            <div id="divCartas"></div>
         </div>
     </div>
 
     <script src="https://underscorejs.org/underscore-umd-min.js"></script>
     <script src="./js/app.js"></script>
+    <script>
+        console.log({modulo});
+        document.querySelector('#btnNuevo').addEventListener('click', () => {
+            modulo.startGame();
+        });
+    </script>
 </body>
 </html>
 
