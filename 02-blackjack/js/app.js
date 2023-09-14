@@ -100,9 +100,9 @@ const turnoComputadora = (puntosMinimos) => {
         if (puntosComputadora === puntosMinimos) {
             alert('Es un EMAPTE!');
         } else if ((puntosMinimos > 21) || (puntosComputadora <= 21)) {
-            alert('Computadora GANA!')
+            alert('Femputadora GANA, a morir por SNUSNU!')
         } else if ((puntosComputadora > 21) || (puntosMinimos <= 21)) {
-            alert('Jugador GANA!');
+            alert('Jugador GANA, arriba el patriarcado!!!');
         }
     }, 1000);
 
@@ -122,8 +122,10 @@ btnNuevo.addEventListener('click', () => {
     puntosComputadora = 0;
     puntosHTML[0].innerText = puntosJugador;
     puntosHTML[1].innerText = puntosComputadora;
-    divCartasJugador.remove();
-    divCartasComputadora.remove();
+    divCartasJugador.innerHTML = '';
+    divCartasComputadora.innerHTML = '';
+    btnPedir.disabled = false;
+    btnDetener.disabled = false;
 });
 
 
