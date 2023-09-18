@@ -1,6 +1,4 @@
-// clases basicas
 class Persona {
-    // propiedad estatica, trabajan sin instancias
     static _conteo = 0;
     static get conteo() {
         return Persona._conteo + ' instancias';
@@ -9,25 +7,20 @@ class Persona {
         console.log('metodo estatico');
     }
 
-    // propiedades
     nombre = '';
     codigo = '';
     frase = '';
     comida = '';
 
-    // metodo constructor que se crea al instanciar una clase
     constructor(nombre = 'sin nombre', codigo = 'sin codigo', frase = 'sin frase') {
         this.nombre = nombre;
         this.codigo = codigo;
         this.frase = frase;
 
         console.log(`Hola soy ${nombre} mi codigo es ${codigo}... ${frase}`);
-
-        // esto para saber cuantas instancias tenemos de la clase
         Persona._conteo++;
     }
 
-    // set y get
     set setComidaFavorita(comida) {
         this.comida = comida.toUpperCase();
     }
@@ -36,7 +29,6 @@ class Persona {
         return `Mi comida favorita es ${this.comida}`;
     }
 
-    // metodos comunes
     quienSoy() {
         console.log(`Soy ${this.nombre}!`);
     }
@@ -47,23 +39,23 @@ class Persona {
     }
 }
 
-const batman = new Persona('Batman', 117, 'Soy la venganza');
-const shin = new Persona('Shin Hati', '25', 'No tienes poder');
-const shin1 = new Persona('Shin Hati', '25', 'No tienes poder');
-// console.log(shin);
-// batman.miFrase();
-// shin.miFrase();
-// batman.setComidaFavorita = 'sopa maligatoni';
-// batman.nemesis = 'Joker';
-// console.log(batman.getComidaFavorita);
-// console.log(batman);
+class Heroe extends Persona {
+    clan = 'sin clan';
 
-// Persona._conteo = 2;
-console.log('conteo estatico:', Persona._conteo);
-console.log(Persona.conteo);
-Persona.mensaje();
+    constructor(nombre, codigo, frase) {
+        // super hace referencia a la clase que extiende
+        super(nombre, codigo, frase);
+        this.clan = 'La batifamilia';
+    }
 
-Persona.propiedadExterna = 'Hola Prop externa';
-console.log(Persona);
-console.log(Persona.propiedadExterna);
+    quienSoy() {
+        console.log('Hola soy', this.nombre);
+        super.quienSoy();
+    }
+}
+
+const batman = new Heroe('Batman', '117', 'Soy la vernganza');
+console.log(batman);
+batman.quienSoy();
+
 
