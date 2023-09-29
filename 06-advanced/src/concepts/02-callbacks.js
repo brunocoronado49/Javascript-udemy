@@ -5,15 +5,25 @@ import { heroes } from '../data/heroes'
  * @param {HTMLDivElement} element 
  */
 export const callbacksComponent = (element) => {
-    const id = '5d86371fd55e2e2a30fe1ccb2';
-    findHero(id, (error, hero) => {
+    const id1 = '5d86371fd55e2e2a30fe1ccb2';
+    const id2 = '5d86371fd55e2e2a30fe1ccb';
+
+    findHero(id1, (error, hero1) => {
         // element.innerHTML = hero?.name || 'No hay heroe';
 
         if (error) {
             element.innerHTML = error;
             return;
         }
-        element.innerHTML = hero.name;
+
+        findHero(id2, (error, hero2) => {
+            if (error) {
+                element.innerHTML = error;
+                return;
+            }
+
+            element.innerHTML = `${hero1.name} - ${hero2.name}`;
+        });
     });
 }
 
@@ -24,6 +34,7 @@ export const callbacksComponent = (element) => {
  */
 const findHero = (id, callback) => {
     const hero = heroes.find(heroe => heroe.id === id);
+
     if (!hero) {
         callback(`Hero with ${id} not found.`);
         return;
@@ -31,5 +42,6 @@ const findHero = (id, callback) => {
 
     callback(null, hero);
 }
+
 
 
