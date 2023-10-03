@@ -5,7 +5,6 @@ import { heroes } from '../data/heroes'
  * @param {HTMLDivElement} element 
  */
 export const forAwaitComponent = async ( element ) => {
-    const id = '5d86371f97c29d020f1e1f6d';
     const heroesIds = heroes.map(hero => {
         return hero.id;
     });
