@@ -1,6 +1,6 @@
 // Tipos de datos primitivos
 
-let nombre = 'Sabine';
+let nombre = 'Shin';
 console.log(typeof nombre);
 
 let edad = 15;

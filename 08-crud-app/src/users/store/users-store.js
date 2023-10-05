@@ -1,16 +1,24 @@
 import { loadUsersByPage } from "../usecases/load-users-by-page";
 
 const state = {
-    users: [],
     currentPage: 0,
+    users: [],
 }
 
 const loadNextPage = async() => {
-    await loadUsersByPage(state.currentPage + 1);
+    const users = await loadUsersByPage(state.currentPage + 1);
+    if (users.length === 0) return;
+
+    state.currentPage += 1;
+    state.users = users;
 }
 
 const loadPreviousPage = async() => {
-    throw new Error('Not implemened yet');
+    const users = await loadUsersByPage(state.currentPage - 1);
+    if (users.length === 0) return;
+
+    state.currentPage -= 1;
+    state.users = users;
 }
 
 const onUserChanged = () => {
@@ -26,7 +34,15 @@ export default {
     loadPreviousPage,
     onUserChanged,
     reloadPage,
+    /**
+     * 
+     * @returns {User[]}
+     */
     getUsers: () => [...state.users],
+    /**
+     * 
+     * @returns {Number}
+     */
     getCurrentPage: () => state.currentPage,
 }
 
