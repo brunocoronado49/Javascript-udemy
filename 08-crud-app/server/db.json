@@ -96,7 +96,7 @@
       "balance": 3319.73,
       "avatar": "http://placehold.it/32x32",
       "first_name": "Cooper",
-      "last_name": "Lang",
+      "last_name": "Sheldon",
       "gender": "male"
     },
     {
@@ -179,6 +179,20 @@
       "first_name": "Shields",
       "last_name": "Hudson",
       "gender": "male"
+    },
+    {
+      "balance": 541551,
+      "first_name": "Francisco",
+      "isActive": true,
+      "last_name": "Rangel",
+      "id": 26
+    },
+    {
+      "balance": 8978,
+      "first_name": "Lupita",
+      "isActive": true,
+      "last_name": "Rios",
+      "id": 27
     }
   ]
 }
